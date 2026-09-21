@@ -199,8 +199,7 @@ npm test
 npm run build
 ```
 
-Run `make help` for all runtime, demo, log, restart, and cleanup commands. Development changes
-follow [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Run `make help` for all runtime, demo, log, restart, and cleanup commands.
 
 ## Further reading
 
