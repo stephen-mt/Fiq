@@ -5,7 +5,7 @@ Create workspaces and environments before exposing connections. Assign the small
 `ADMIN` manages connections and access. The backend checks every resource; hiding a UI control is
 not an authorization boundary.
 
-Policies select environment, catalog, namespace, table, and tags. In Phase 1 only OPTIMIZE BINPACK
+Policies select environment, catalog, namespace, table, and tags. Currently only OPTIMIZE BINPACK
 and VACUUM FULL can mutate tables. OPTIMIZE thresholds include small-file size/count/ratio,
 rewrite bytes, target size, and expected reduction. VACUUM thresholds include retention,
 candidate count, and measured reclaimable bytes. Values such as 128 MiB, 20 files, and 30% are

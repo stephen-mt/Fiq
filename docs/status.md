@@ -1,4 +1,4 @@
-# FIQ Phase 1 delivery status
+# Delivery status
 
 ## Implemented
 
@@ -52,17 +52,14 @@ The executable acceptance is [`scripts/acceptance-core.sh`](../scripts/acceptanc
 destructive only to the explicitly marked sample fixtures and must never be pointed at production
 tables.
 
-## Deliberately not Phase 1 mutation-qualified
+## Not currently mutation-qualified
 
 VACUUM LITE, Z-order, liquid-clustering maintenance, REORG, inventory vacuum, and Glue remain
-visible only for compatibility and return `NOT_QUALIFIED_IN_PHASE_1`. Unity Catalog,
-catalog-managed mutation, generic table formats, HA/DR qualification, enterprise webhook/secret
-frameworks, and 100k-table scale qualification are deferred.
-
-FIQ Phase 1 is not described generally as “production-ready.” Its bounded claim is **Classic
-Delta Maintenance Core** on the exact qualified mutation runtime.
+visible only for compatibility. Unity Catalog, catalog-managed mutation, generic table formats,
+HA/DR qualification, enterprise webhook/secret frameworks, and 100k-table scale qualification
+are deferred.
 
 Known limitations remain: first clean startup downloads a large Spark/Hive dependency graph;
 Playwright uses deterministic API fixtures while the separate Compose acceptance exercises the
-real backend; Glue is not implemented; and Phase 1 has not completed broad security, scale,
-accessibility, or multi-runtime compatibility qualification.
+real backend; and Glue is not implemented. Broad security, scale, accessibility, and multi-runtime
+compatibility qualification has not been completed.

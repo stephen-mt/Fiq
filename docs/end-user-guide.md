@@ -59,7 +59,7 @@ Never point `scripts/acceptance-core.sh` at non-sample tables.
 
 ### 1. Check compatibility
 
-Phase 1 mutation is qualified only for:
+Maintenance mutation is currently qualified only for:
 
 - Spark 4.0.1.
 - Delta Lake 4.0.1.
@@ -316,7 +316,7 @@ make demo-down
 Run `make help` for scoped restart and cleanup commands. FIQ cleanup never requires broad Docker
 prune commands.
 
-## Current Phase 1 limits
+## Current limits
 
 - Mutation-qualified only on Spark 4.0.1 + Delta Lake 4.0.1.
 - PATH and HMS only; Glue and Unity Catalog are deferred.
@@ -324,4 +324,4 @@ prune commands.
 - Livy is the only execution adapter implemented.
 - `FIQ_S3_ENDPOINT` is currently deployment-level for embedded Kernel access to an
   S3-compatible endpoint; per-connection storage endpoints are not fully exposed in the UI.
-- FIQ is the Classic Delta Maintenance Core, not a general production-readiness claim.
+- Other Spark and Delta versions require their own compatibility qualification.

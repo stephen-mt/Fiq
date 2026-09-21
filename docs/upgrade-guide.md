@@ -10,7 +10,7 @@
 6. Roll back the application image only when its schema compatibility says so. Never run Flyway
    clean or edit migration history.
 
-Protocol and table-feature capabilities are detected from observed metadata, but Phase 1 mutation
+Protocol and table-feature capabilities are detected from observed metadata, but mutation
 qualification is intentionally limited to Spark 4.0.1 + Delta Lake 4.0.1. New runtime versions or
 unknown features remain read-only until an explicit compatibility suite and safety acceptance
 pass.

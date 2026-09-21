@@ -109,6 +109,4 @@ enough for a hostile or large shared deployment:
 - Discovery, assessment, and driver-side result collection have not been qualified at large-fleet
   scale.
 
-These are the main reasons Phase 1 is described as a Classic Delta Maintenance Core rather than a
-production-ready multi-tenant control plane. The exact tested baseline and deferred features are
-kept in [`phase-status.md`](phase-status.md).
+The exact tested baseline and deferred features are kept in [`status.md`](status.md).

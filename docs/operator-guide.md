@@ -100,5 +100,5 @@ ID; never replay a run by changing its database state.
 - Lost server replica: leases expire and another replica resumes polling without resubmission.
 - Stale table version: the run becomes `SKIPPED`; refresh and create a new plan.
 - Unknown Delta feature: the table remains observable but maintenance is read-only.
-- VACUUM LITE or another retained operation type: capability is
-  `NOT_QUALIFIED_IN_PHASE_1`; it has no Phase 1 executor.
+- VACUUM LITE or another retained operation type: it has no qualified executor and remains
+  read-only.

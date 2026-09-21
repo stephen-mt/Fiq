@@ -14,24 +14,6 @@ FIQ discovers PATH and Hive Metastore tables, records table facts independently 
 explains why a table does or does not qualify, runs approved work through Livy, and checks the
 table again before declaring success. It never edits `_delta_log` directly.
 
-## Where the project is today
-
-The honest version: the Phase 1 flow works, but FIQ is not production-ready yet.
-
-The full happy path works on the runtime we currently qualify: Spark 4.0.1, Delta Lake 4.0.1,
-Scala 2.13, and Livy. Both PATH and Hive Metastore discovery are implemented. The two executable
-maintenance operations are `OPTIMIZE BINPACK` and `VACUUM FULL`, including preflight evidence,
-approval, structured job results, and before/after verification.
-
-That is enough to run the local demo, connect a controlled Delta environment, and try the workflow
-with a small platform team. It is not enough to run FIQ as a shared service for untrusted tenants.
-Multi-workspace isolation, crash-safe submission and cancellation, fully transactional audit
-history, large-fleet behavior, HA/DR, and broader security qualification still need work. For now,
-keep it inside a trusted environment and start with non-critical tables.
-
-The exact implemented and deferred boundaries are tracked in
-[`docs/phase-status.md`](docs/phase-status.md).
-
 ## Architecture
 
 ![FIQ architecture](docs/assets/fiq-architecture.png)
@@ -164,7 +146,7 @@ make down
 - Fresh post-operation assessment and before/after verification
 - A React UI for connections, tables, policies, operations, and audit history
 
-Not mutation-qualified in Phase 1: VACUUM LITE, Z-order, liquid-clustering maintenance, REORG,
+Not currently mutation-qualified: VACUUM LITE, Z-order, liquid-clustering maintenance, REORG,
 inventory vacuum, Glue, Unity Catalog, other table formats, or Spark/Delta versions outside the
 stated baseline.
 
@@ -208,7 +190,7 @@ Run `make help` for all runtime, demo, log, restart, and cleanup commands.
 - [`docs/operator-guide.md`](docs/operator-guide.md) — day-to-day operation and recovery
 - [`docs/admin-guide.md`](docs/admin-guide.md) — deployment and security settings
 - [`docs/upgrade-guide.md`](docs/upgrade-guide.md) — upgrade procedure
-- [`docs/phase-status.md`](docs/phase-status.md) — tested scope and known limits
+- [`docs/status.md`](docs/status.md) — tested scope and known limits
 
 ## Acknowledgements
 
